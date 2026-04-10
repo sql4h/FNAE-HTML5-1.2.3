@@ -243,6 +243,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     // 初始化游戏
     game = new Game();
     staticNoise = new StaticNoise();
+    new CheatMenu(game);
     
     // 更新Continue按钮显示
     game.updateContinueButton();

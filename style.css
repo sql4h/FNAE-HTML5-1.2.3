@@ -684,7 +684,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/FNAE-HTML5-1.2.3/assets/images/menubackground.png') center/cover;
+    background: url('assets/images/menubackground.png') center/cover;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2019,4 +2019,197 @@ button {
         font-size: 4vw;
         width: 100%;
     }
+}
+
+/* ============================================================
+   CHEAT / MOD MENU
+   ============================================================ */
+#cheat-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    background: #0d0d0d;
+    border: 2px solid #e8c53a;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(232, 197, 58, 0.45), 0 0 60px rgba(0,0,0,0.8);
+    z-index: 100000;
+    font-family: 'Arial', sans-serif;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#cheat-menu.hidden {
+    display: none !important;
+}
+
+/* Header */
+#cheat-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1a1a1a;
+    border-bottom: 2px solid #e8c53a;
+    padding: 10px 14px;
+}
+
+#cheat-menu-title {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #e8c53a;
+    text-transform: uppercase;
+}
+
+#cheat-menu-close {
+    background: transparent;
+    border: 1px solid #e8c53a;
+    color: #e8c53a;
+    font-size: 14px;
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: background 0.15s, color 0.15s;
+}
+
+#cheat-menu-close:hover {
+    background: #e8c53a;
+    color: #000;
+}
+
+/* Status bar */
+#cheat-status-bar {
+    display: flex;
+    justify-content: space-around;
+    background: #111;
+    border-bottom: 1px solid #333;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+#cheat-status-bar b {
+    color: #e8c53a;
+}
+
+/* Body */
+#cheat-menu-body {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+#cheat-menu-body::-webkit-scrollbar {
+    width: 5px;
+}
+#cheat-menu-body::-webkit-scrollbar-track { background: #111; }
+#cheat-menu-body::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+
+/* Section labels */
+.cheat-section-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #666;
+    text-transform: uppercase;
+    margin-top: 6px;
+    margin-bottom: 2px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #222;
+}
+
+/* Cheat buttons */
+.cheat-btn {
+    background: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    color: #ddd;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    text-transform: uppercase;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    width: 100%;
+}
+
+.cheat-btn:hover {
+    background: #2a2a2a;
+    border-color: #e8c53a;
+    color: #e8c53a;
+}
+
+.cheat-btn.cheat-active {
+    background: #2a2000;
+    border-color: #e8c53a;
+    color: #e8c53a;
+}
+
+/* Jump-to-night row */
+#cheat-jump-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+#cheat-night-select {
+    flex: 1;
+    background: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    color: #ddd;
+    font-size: 12px;
+    padding: 7px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: auto;
+}
+
+#cheat-jump-row .cheat-btn {
+    flex: 0 0 50px;
+    text-align: center;
+}
+
+/* Footer */
+#cheat-menu-footer {
+    background: #111;
+    border-top: 1px solid #222;
+    text-align: center;
+    font-size: 10px;
+    color: #444;
+    padding: 6px;
+    letter-spacing: 1px;
+}
+
+/* Toast notification */
+.cheat-toast {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(232, 197, 58, 0.92);
+    color: #000;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 5px;
+    z-index: 200000;
+    box-shadow: 0 0 18px rgba(232, 197, 58, 0.6);
+    animation: cheat-toast-in 0.2s ease;
+    white-space: nowrap;
+}
+
+@keyframes cheat-toast-in {
+    from { opacity: 0; top: 2px; }
+    to   { opacity: 1; top: 12px; }
 }
